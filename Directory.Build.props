@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <ItemGroup>
+        <PackageReference Include="Nerdbank.GitVersioning" Condition="$(MSBuildProjectName) != 'Human.HPCRedux.Resources'">
+            <PrivateAssets>all</PrivateAssets>
+            <Version>3.6.143</Version>
+        </PackageReference>
+    </ItemGroup>
+    <PropertyGroup Condition="'$(Configuration)' == 'Release'">
+        <ContinuousIntegrationBuild>true</ContinuousIntegrationBuild>
+        <EmbedAllSources>true</EmbedAllSources>
+        <AllowedOutputExtensionsInPackageBuildOutputFolder>$(AllowedOutputExtensionsInPackageBuildOutputFolder);.pdb</AllowedOutputExtensionsInPackageBuildOutputFolder>
+
+        <SentryUploadSymbols>true</SentryUploadSymbols>
+        <SentryCreateRelease>true</SentryCreateRelease>
+        <SentrySetCommits>true</SentrySetCommits>
+    </PropertyGroup>
+</Project>
